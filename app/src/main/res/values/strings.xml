@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Casino</string>
+    <string name="Slots">Slots</string>
+    <string name="Roulette">Roulette</string>
+    <string name="Dice">Dice</string>
+    <string name="Black_Jack">Black Jack</string>
+    <string name="Games">Games</string>
+</resources>
