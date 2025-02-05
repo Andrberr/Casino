@@ -11,4 +11,5 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val MenuItemBgColor = Color(0xFF790A0A)
-val GamesTitleColor = Color(0xFFEB2727)
+val ZeroColor = Color(0xFF1E790A)
+val RedColor = Color(0xFFD31B1B)

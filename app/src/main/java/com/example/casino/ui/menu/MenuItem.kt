@@ -50,7 +50,7 @@ fun MenuItem(menuItemModel: MenuItemModel, onClick: () -> Unit) {
 
         Text(
             text = stringResource(id = menuItemModel.titleRes),
-            fontSize = 16.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
             textAlign = TextAlign.Center,

@@ -5,4 +5,7 @@
     <string name="Dice">Dice</string>
     <string name="Black_Jack">Black Jack</string>
     <string name="Games">Games</string>
+    <string name="Red">Red</string>
+    <string name="Black">Black</string>
+    <string name="Zero">Zero</string>
 </resources>

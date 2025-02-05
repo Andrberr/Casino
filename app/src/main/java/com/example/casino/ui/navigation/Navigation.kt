@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.casino.ui.black_jack.BlackJack
 import com.example.casino.ui.dice.DiceScreen
 import com.example.casino.ui.menu.MenuScreen
 import com.example.casino.ui.models.Destinations
@@ -15,7 +14,9 @@ import com.example.casino.ui.slots.SlotsScreen
 
 @Composable
 fun Navigation(
-    navController: NavHostController
+    navController: NavHostController,
+    setLandscapeOrientation: () -> Unit,
+    setDefaultOrientation: () -> Unit
 ) {
 
     NavHost(navController, startDestination = Destinations.MenuDestination.route) {
@@ -28,6 +29,7 @@ fun Navigation(
             exitTransition = {
                 ExitTransition.None
             }) {
+            setDefaultOrientation()
             MenuScreen(
                 navController = navController
             )
@@ -41,6 +43,7 @@ fun Navigation(
             exitTransition = {
                 ExitTransition.None
             }) {
+            setLandscapeOrientation()
             SlotsScreen(
                 navController = navController
             )
@@ -68,19 +71,6 @@ fun Navigation(
                 ExitTransition.None
             }) {
             DiceScreen(
-                navController = navController
-            )
-        }
-
-        composable(
-            route = Destinations.BlackJackDestination.route,
-            enterTransition = {
-                EnterTransition.None
-            },
-            exitTransition = {
-                ExitTransition.None
-            }) {
-            BlackJack(
                 navController = navController
             )
         }
