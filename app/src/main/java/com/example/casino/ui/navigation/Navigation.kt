@@ -57,6 +57,7 @@ fun Navigation(
             exitTransition = {
                 ExitTransition.None
             }) {
+            setLandscapeOrientation()
             RouletteScreen(
                 navController = navController
             )

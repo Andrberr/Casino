@@ -5,7 +5,6 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,10 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -46,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.casino.R
 import com.example.casino.ui.Constants.ROULETTE_SLOTS
+import com.example.casino.ui.composables.TopBar
 import com.example.casino.ui.noRippleClickable
 import kotlinx.coroutines.launch
 import kotlin.math.floor
@@ -105,32 +103,7 @@ fun RouletteScreen(navController: NavHostController) {
                 .padding(8.dp)
         ) {
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                IconButton(onClick = {
-                    navController.popBackStack()
-                }) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = null, tint = Color.White)
-                }
-
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = balance.toString(),
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = Color.White
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Image(
-                        modifier = Modifier.size(24.dp),
-                        imageVector = ImageVector.vectorResource(id = R.drawable.coin),
-                        contentDescription = null
-                    )
-                }
-            }
+            TopBar(navController = navController, balance = balance)
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

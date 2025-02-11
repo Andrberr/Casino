@@ -22,7 +22,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableDoubleStateOf
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
@@ -43,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.casino.R
 import com.example.casino.ui.Constants.ITEMS_IN_SLOT
+import com.example.casino.ui.composables.TopBar
 import com.example.casino.ui.noRippleClickable
 import kotlinx.coroutines.launch
 import kotlin.random.Random
@@ -125,32 +125,7 @@ fun SlotsScreen(navController: NavHostController) {
                 .padding(8.dp)
         ) {
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                IconButton(onClick = {
-                    navController.popBackStack()
-                }) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = null, tint = Color.White)
-                }
-
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = balance.toString(),
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = Color.White
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Image(
-                        modifier = Modifier.size(24.dp),
-                        imageVector = ImageVector.vectorResource(id = R.drawable.coin),
-                        contentDescription = null
-                    )
-                }
-            }
+            TopBar(navController = navController, balance = balance)
 
             Row(
                 modifier = Modifier
