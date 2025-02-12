@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.casino.ui.coin.CoinScreen
 import com.example.casino.ui.dice.DiceScreen
 import com.example.casino.ui.menu.MenuScreen
 import com.example.casino.ui.models.Destinations
@@ -72,6 +73,19 @@ fun Navigation(
                 ExitTransition.None
             }) {
             DiceScreen(
+                navController = navController
+            )
+        }
+
+        composable(
+            route = Destinations.CoinDestination.route,
+            enterTransition = {
+                EnterTransition.None
+            },
+            exitTransition = {
+                ExitTransition.None
+            }) {
+            CoinScreen(
                 navController = navController
             )
         }

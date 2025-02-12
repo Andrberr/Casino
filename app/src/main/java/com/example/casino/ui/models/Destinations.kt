@@ -20,11 +20,16 @@ sealed class Destinations(
         route = DICE_ROUTE
     )
 
+    data object CoinDestination : Destinations(
+        route = COIN_ROUTE
+    )
+
     companion object {
         // Routes
         const val MENU_ROUTE = "menu_screen"
         const val SLOTS_ROUTE = "slots_screen"
         const val ROULETTE_ROUTE = "roulette_screen"
         const val DICE_ROUTE = "dice_screen"
+        const val COIN_ROUTE = "coin_screen"
     }
 }

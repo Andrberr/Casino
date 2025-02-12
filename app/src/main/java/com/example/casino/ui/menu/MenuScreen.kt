@@ -46,7 +46,8 @@ fun MenuScreen(navController: NavHostController) {
             R.drawable.roulette_img,
             Destinations.ROULETTE_ROUTE
         ),
-        MenuItemModel(R.string.Dice, R.drawable.dice, Destinations.DICE_ROUTE)
+        MenuItemModel(R.string.Dice, R.drawable.dice, Destinations.DICE_ROUTE),
+        MenuItemModel(R.string.Coin, R.drawable.coinposter, Destinations.COIN_ROUTE)
     )
 
     Box(modifier = Modifier.fillMaxSize()) {
