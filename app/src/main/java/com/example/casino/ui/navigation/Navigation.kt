@@ -17,7 +17,8 @@ import com.example.casino.ui.slots.SlotsScreen
 fun Navigation(
     navController: NavHostController,
     setLandscapeOrientation: () -> Unit,
-    setDefaultOrientation: () -> Unit
+    setDefaultOrientation: () -> Unit,
+    infoUrl: String
 ) {
 
     NavHost(navController, startDestination = Destinations.MenuDestination.route) {
@@ -32,7 +33,8 @@ fun Navigation(
             }) {
             setDefaultOrientation()
             MenuScreen(
-                navController = navController
+                navController = navController,
+                infoUrl = infoUrl
             )
         }
 

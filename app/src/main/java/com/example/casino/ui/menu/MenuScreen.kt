@@ -1,5 +1,7 @@
 package com.example.casino.ui.menu
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,6 +28,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -38,7 +41,7 @@ import com.example.casino.ui.models.Destinations
 import com.example.casino.ui.models.MenuItemModel
 
 @Composable
-fun MenuScreen(navController: NavHostController) {
+fun MenuScreen(navController: NavHostController, infoUrl: String) {
     val menuItems = listOf(
         MenuItemModel(R.string.Slots, R.drawable.slots, Destinations.SLOTS_ROUTE),
         MenuItemModel(
@@ -49,6 +52,7 @@ fun MenuScreen(navController: NavHostController) {
         MenuItemModel(R.string.Dice, R.drawable.dice, Destinations.DICE_ROUTE),
         MenuItemModel(R.string.Coin, R.drawable.coinposter, Destinations.COIN_ROUTE)
     )
+    val context = LocalContext.current
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
@@ -81,7 +85,10 @@ fun MenuScreen(navController: NavHostController) {
                     textAlign = TextAlign.Center
                 )
 
-                IconButton(onClick = { }) {
+                IconButton(onClick = {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(infoUrl))
+                    context.startActivity(intent)
+                }) {
                     Icon(Icons.Default.Info, contentDescription = null, tint = Color.White)
                 }
             }
