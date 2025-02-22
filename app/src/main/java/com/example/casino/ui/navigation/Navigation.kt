@@ -18,7 +18,7 @@ fun Navigation(
     navController: NavHostController,
     setLandscapeOrientation: () -> Unit,
     setDefaultOrientation: () -> Unit,
-    infoUrl: String
+    onPrivacyPolicyClick: () -> Unit
 ) {
 
     NavHost(navController, startDestination = Destinations.MenuDestination.route) {
@@ -34,7 +34,7 @@ fun Navigation(
             setDefaultOrientation()
             MenuScreen(
                 navController = navController,
-                infoUrl = infoUrl
+                onPrivacyPolicyClick = onPrivacyPolicyClick
             )
         }
 

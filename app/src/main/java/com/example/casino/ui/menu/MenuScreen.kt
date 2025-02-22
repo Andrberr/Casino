@@ -1,7 +1,5 @@
 package com.example.casino.ui.menu
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -41,7 +39,7 @@ import com.example.casino.ui.models.Destinations
 import com.example.casino.ui.models.MenuItemModel
 
 @Composable
-fun MenuScreen(navController: NavHostController, infoUrl: String) {
+fun MenuScreen(navController: NavHostController, onPrivacyPolicyClick: () -> Unit) {
     val menuItems = listOf(
         MenuItemModel(R.string.Slots, R.drawable.slots, Destinations.SLOTS_ROUTE),
         MenuItemModel(
@@ -86,8 +84,7 @@ fun MenuScreen(navController: NavHostController, infoUrl: String) {
                 )
 
                 IconButton(onClick = {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(infoUrl))
-                    context.startActivity(intent)
+                    onPrivacyPolicyClick()
                 }) {
                     Icon(Icons.Default.Info, contentDescription = null, tint = Color.White)
                 }

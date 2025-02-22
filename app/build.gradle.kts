@@ -57,6 +57,12 @@ dependencies {
     implementation("com.google.firebase:firebase-config")
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-messaging:24.1.0")
+    implementation("com.google.firebase:firebase-firestore")
+
+    //Custom Tabs
+    implementation("androidx.browser:browser:1.8.0")
+    // Web View
+    implementation("androidx.webkit:webkit:1.12.1")
 
     // Navigation
     implementation(libs.androidx.navigation.compose)
