@@ -1,6 +1,7 @@
 package com.example.casino.ui.web
 
 import android.net.Uri
+import androidx.activity.compose.BackHandler
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -17,6 +18,7 @@ fun OpenUrlScreen(url: String) {
     LaunchedEffect(url) {
         try {
             val intent = CustomTabsIntent.Builder().build()
+            intent.intent.setPackage("com.android.chrome")
             intent.launchUrl(context, Uri.parse(url))
         } catch (e: Exception) {
             useWebView = true
